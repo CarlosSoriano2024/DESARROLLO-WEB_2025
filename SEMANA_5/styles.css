@@ -1,0 +1,89 @@
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+input[type="url"] {
+    width: 300px;
+    padding: 8px;
+}
+
+button {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    border: 3px solid transparent;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+.selected {
+    border: 3px solid #ff5733;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+</style>
+
+<!-- script.js -->
+<script>
+const imageUrlInput = document.getElementById('imageUrl');
+const addImageBtn = document.getElementById('addImage');
+const removeImageBtn = document.getElementById('removeImage');
+const gallery = document.getElementById('gallery');
+let selectedImage = null;
+
+addImageBtn.addEventListener('click', () => {
+    const url = imageUrlInput.value.trim();
+    if (url) {
+        const img = document.createElement('img');
+        img.src = url;
+
+        img.addEventListener('click', () => {
+            if (selectedImage) selectedImage.classList.remove('selected');
+            selectedImage = img;
+            img.classList.add('selected');
+        });
+
+        gallery.appendChild(img);
+        imageUrlInput.value = '';
+    }
+});
+
+removeImageBtn.addEventListener('click', () => {
+    if (selectedImage) {
+        gallery.removeChild(selectedImage);
+        selectedImage = null;
+    }
+});
+
+imageUrlInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') addImageBtn.click();
+});
+</script>
