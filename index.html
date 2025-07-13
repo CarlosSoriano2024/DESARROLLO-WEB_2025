@@ -6,42 +6,80 @@
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      background-color: #f0f4f8;
-      color: #333;
-      text-align: center;
+      background: linear-gradient(to right, #e3f2fd, #ffffff);
+      margin: 0;
       padding: 40px;
+      color: #2c3e50;
+      text-align: center;
+      position: relative;
+      min-height: 100vh;
+    }
+    header {
+      margin-bottom: 40px;
+    }
+    img.logo {
+      width: 120px;
+      height: auto;
+      margin-bottom: 15px;
     }
     h1 {
-      color: #2c3e50;
-      margin-bottom: 10px;
+      font-size: 2.4em;
+      margin: 0;
+      color: #1976d2;
     }
     p {
-      margin-bottom: 30px;
+      font-size: 1.2em;
+      margin: 10px 0 30px;
     }
     ul {
       list-style: none;
       padding: 0;
+      max-width: 500px;
+      margin: 0 auto;
     }
     li {
       margin: 15px 0;
     }
     a {
       text-decoration: none;
-      background-color: #3498db;
+      background-color: #42a5f5;
       color: white;
       padding: 10px 20px;
-      border-radius: 5px;
+      border-radius: 6px;
       display: inline-block;
-      transition: background-color 0.3s;
+      width: 100%;
+      transition: background-color 0.3s ease;
+      font-weight: bold;
     }
     a:hover {
-      background-color: #2980b9;
+      background-color: #1e88e5;
+    }
+    footer {
+      margin-top: 60px;
+      font-size: 0.9em;
+      color: #607d8b;
+    }
+    .autor {
+      position: absolute;
+      bottom: 15px;
+      right: 15px;
+      background-color: #eeeeee;
+      border: 1px solid #ccc;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 0.9em;
+      color: #555;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
     }
   </style>
 </head>
 <body>
-  <h1>📘 Desarrollo Web 2025</h1>
-  <p>Selecciona la semana que deseas consultar:</p>
+  <header>
+    <img src="./logo.png" alt="Logo institucional" class="logo">
+    <h1>📘 Desarrollo Web 2025</h1>
+    <p>Explora el contenido semanal del curso</p>
+  </header>
+
   <ul>
     <li><a href="./SEMANA_3/index.html">Semana 3</a></li>
     <li><a href="./SEMANA_4/index.html">Semana 4</a></li>
@@ -49,5 +87,14 @@
     <li><a href="./SEMANA_6/index.html">Semana 6</a></li>
     <li><a href="./SEMANA_7/index.html">Semana 7</a></li>
   </ul>
+
+  <footer>
+    <p>Creado como parte del proyecto académico 2025</p>
+    <p>Última actualización: julio 2025</p>
+  </footer>
+
+  <div class="autor">
+    Desarrollado por: <strong>Carlos Soriano Abril</strong>
+  </div>
 </body>
 </html>
