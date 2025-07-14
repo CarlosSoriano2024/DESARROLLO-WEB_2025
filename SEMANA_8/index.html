@@ -24,31 +24,41 @@
   </nav>
 
  <!-- 🎠 Carrusel Bootstrap -->
-<div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="./img/img1.jpg" class="d-block w-100" alt="Reactivo 1">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Reactivo 1</h5>
-        <p>Solución química aplicada.</p>
+<div class="container mt-4">
+  <div id="carouselExample" class="carousel slide mx-auto" data-bs-ride="carousel" data-bs-interval="3000" style="max-width: 700px;">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="./img/img1.jpg" class="d-block w-100 bordered-image" alt="Reactivo 1">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Reactivo 1</h5>
+          <p>Solución química aplicada.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="./img/img2.jpg" class="d-block w-100 bordered-image" alt="Reactivo 2">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Reactivo 2</h5>
+          <p>Presentación para laboratorio escolar.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="./img/img3.jpg" class="d-block w-100 bordered-image" alt="Reactivo 3">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Reactivo 3</h5>
+          <p>Imagen representativa del análisis técnico.</p>
+        </div>
       </div>
     </div>
-    <div class="carousel-item">
-      <img src="./img/img2.jpg" class="d-block w-100" alt="Reactivo 2">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Reactivo 2</h5>
-        <p>Presentación para laboratorio escolar.</p>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <img src="./img/img3.jpg" class="d-block w-100" alt="Reactivo 3">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>Reactivo 3</h5>
-        <p>Imagen representativa del análisis técnico.</p>
-      </div>
-    </div>
-  </div>
 
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Siguiente</span>
+    </button>
+  </div>
   <!-- Controles -->
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
