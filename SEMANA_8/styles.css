@@ -1,0 +1,9 @@
+footer {
+  font-size: 0.9rem;
+  background-color: #1b1b1b;
+}
+
+#alertButton:hover {
+  background-color: #ffc107;
+  transform: scale(1.05);
+}
