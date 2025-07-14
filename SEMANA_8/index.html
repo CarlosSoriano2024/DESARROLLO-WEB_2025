@@ -23,20 +23,42 @@
     </div>
   </nav>
 
-  <!-- 🎠 Carrusel Bootstrap -->
-  <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active"><img src="img1.jpg" class="d-block w-100" alt="..."></div>
-      <div class="carousel-item"><img src="img2.jpg" class="d-block w-100" alt="..."></div>
-      <div class="carousel-item"><img src="img3.jpg" class="d-block w-100" alt="..."></div>
+ <!-- 🎠 Carrusel Bootstrap -->
+<div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="./imagen/img1.jpg" class="d-block w-100" alt="Reactivo 1">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Reactivo 1</h5>
+        <p>Solución química aplicada.</p>
+      </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-      <span class="carousel-control-next-icon"></span>
-    </button>
+    <div class="carousel-item">
+      <img src="./imagen/img2.jpg" class="d-block w-100" alt="Reactivo 2">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Reactivo 2</h5>
+        <p>Presentación para laboratorio escolar.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="./imagen/img3.jpg" class="d-block w-100" alt="Reactivo 3">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Reactivo 3</h5>
+        <p>Imagen representativa del análisis técnico.</p>
+      </div>
+    </div>
   </div>
+
+  <!-- Controles -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Anterior</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Siguiente</span>
+  </button>
+</div>
 
   <!-- 🧾 Tabla de Productos -->
   <div class="container mt-4">
