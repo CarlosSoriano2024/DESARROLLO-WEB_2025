@@ -1,0 +1,37 @@
+/* Personalización de botones */
+.btn-primary {
+    background-color: #ff5733;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #e74c3c;
+    transform: scale(1.05);
+}
+
+/* Animaciones para las cards */
+.card:hover {
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
+}
+
+/* Personalización de formulario */
+form {
+    border: 2px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+/* Media Query para pantallas pequeñas */
+@media (max-width: 768px) {
+    body {
+        background-color: #f0f0f0;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+}

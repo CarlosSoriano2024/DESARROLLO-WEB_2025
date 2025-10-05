@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mi Página Interactiva</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- 🧭 Encabezado con Menú -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Mi Proyecto</a>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Productos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+ <!-- 🎠 Carrusel Bootstrap -->
+<div class="container mt-4">
+  <div id="carouselExample" class="carousel slide mx-auto" data-bs-ride="carousel" data-bs-interval="3000" style="max-width: 700px;">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="./img/img1.jpg" class="d-block w-100 bordered-image" alt="Reactivo 1">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Reactivo 1</h5>
+          <p>Solución química aplicada.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="./img/img2.jpg" class="d-block w-100 bordered-image" alt="Reactivo 2">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Reactivo 2</h5>
+          <p>Presentación para laboratorio escolar.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="./img/img3.jpg" class="d-block w-100 bordered-image" alt="Reactivo 3">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Reactivo 3</h5>
+          <p>Imagen representativa del análisis técnico.</p>
+        </div>
+      </div>
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Siguiente</span>
+    </button>
+  </div>
+  <!-- Controles -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Anterior</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Siguiente</span>
+  </button>
+</div>
+
+  <!-- 🧾 Tabla de Productos -->
+  <div class="container mt-4">
+    <table class="table table-striped">
+      <thead><tr><th>Producto</th><th>Precio</th><th>Stock</th></tr></thead>
+      <tbody>
+        <tr><td>Reactivo A</td><td>$10</td><td>25</td></tr>
+        <tr><td>Reactivo B</td><td>$18</td><td>8</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 📝 Formulario de Contacto -->
+  <div class="container mt-4">
+    <form id="contactForm">
+      <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="nombre" required>
+      </div>
+      <div class="mb-3">
+        <label for="correo" class="form-label">Correo Electrónico</label>
+        <input type="email" class="form-control" id="correo" required>
+      </div>
+      <div class="mb-3">
+        <label for="mensaje" class="form-label">Mensaje</label>
+        <textarea class="form-control" id="mensaje" rows="3" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+  </div>
+
+  <!-- 🔘 Botón de Alerta -->
+  <div class="container mt-3">
+    <button id="alertButton" class="btn btn-warning">Mostrar Alerta</button>
+  </div>
+
+  <!-- 📞 Pie de Página -->
+  <footer class="bg-dark text-white text-center mt-4 py-3">
+    <p>Contacto: proyecto@example.com | Síguenos en redes sociales</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

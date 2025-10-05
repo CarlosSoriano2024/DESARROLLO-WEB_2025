@@ -1,0 +1,14 @@
+footer {
+  font-size: 0.9rem;
+  background-color: #1b1b1b;
+}
+
+#alertButton:hover {
+  background-color: #ffc107;
+  transform: scale(1.05);
+}
+.bordered-image {
+  border: 4px solid #1976d2;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(33, 150, 243, 0.3);
+}
