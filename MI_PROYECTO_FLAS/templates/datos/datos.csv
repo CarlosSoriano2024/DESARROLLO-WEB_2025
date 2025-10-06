@@ -1,5 +1,4 @@
 import csv
-
 @app.route('/guardar_csv/<nombre>/<correo>')
 def guardar_csv(nombre, correo):
     with open('datos/datos.csv', 'a', newline='', encoding='utf-8') as archivo:
@@ -13,3 +12,4 @@ def leer_csv():
         reader = csv.reader(archivo)
         datos = list(reader)
     return render_template('resultado.html', datos=datos)
+
