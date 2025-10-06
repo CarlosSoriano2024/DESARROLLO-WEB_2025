@@ -1,5 +1,4 @@
 import mysql.connector
-
 def conectar():
     try:
         conexion = mysql.connector.connect(
@@ -12,3 +11,4 @@ def conectar():
     except mysql.connector.Error as error:
         print("Error de conexión:", error)
         return None
+
