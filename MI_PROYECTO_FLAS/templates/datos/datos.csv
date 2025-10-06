@@ -1,0 +1,15 @@
+import csv
+
+@app.route('/guardar_csv/<nombre>/<correo>')
+def guardar_csv(nombre, correo):
+    with open('datos/datos.csv', 'a', newline='', encoding='utf-8') as archivo:
+        writer = csv.writer(archivo)
+        writer.writerow([nombre, correo])
+    return f'Dato de {nombre} guardado en CSV.'
+
+@app.route('/leer_csv')
+def leer_csv():
+    with open('datos/datos.csv', 'r', encoding='utf-8') as archivo:
+        reader = csv.reader(archivo)
+        datos = list(reader)
+    return render_template('resultado.html', datos=datos)
