@@ -91,3 +91,61 @@ def logout():
 @login_required
 def dashboard():
     return render_template('dashboard.html', nombre=current_user.nombre)
+from flask import Flask, render_template, request, redirect, url_for
+from conexion.conexion import conectar
+
+app = Flask(__name__)
+
+@app.route('/crear', methods=['GET', 'POST'])
+def crear():
+    if request.method == 'POST':
+        nombre = request.form['nombre']
+        precio = request.form['precio']
+        stock = request.form['stock']
+
+        if nombre and precio and stock:
+            conn = conectar()
+            cursor = conn.cursor()
+            cursor.execute("INSERT INTO producto (nombre, precio, stock) VALUES (%s, %s, %s)",
+                           (nombre, precio, stock))
+            conn.commit()
+            conn.close()
+            return redirect(url_for('productos'))
+    return render_template('formulario.html')
+@app.route('/productos')
+def productos():
+    conn = conectar()
+    cursor = conn.cursor(dictionary=True)
+    cursor.execute("SELECT * FROM producto")
+    datos = cursor.fetchall()
+    conn.close()
+    return render_template('productos.html', productos=datos)
+@app.route('/editar/<int:id>', methods=['GET', 'POST'])
+def editar(id):
+    conn = conectar()
+    cursor = conn.cursor(dictionary=True)
+
+    if request.method == 'POST':
+        nombre = request.form['nombre']
+        precio = request.form['precio']
+        stock = request.form['stock']
+        cursor.execute("UPDATE producto SET nombre=%s, precio=%s, stock=%s WHERE id=%s",
+                       (nombre, precio, stock, id))
+        conn.commit()
+        conn.close()
+        return redirect(url_for('productos'))
+
+    cursor.execute("SELECT * FROM producto WHERE id = %s", (id,))
+    producto = cursor.fetchone()
+    conn.close()
+    return render_template('editar.html', producto=producto)
+@app.route('/eliminar/<int:id>', methods=['GET', 'POST'])
+def eliminar(id):
+    if request.method == 'POST':
+        conn = conectar()
+        cursor = conn.cursor()
+        cursor.execute("DELETE FROM producto WHERE id = %s", (id,))
+        conn.commit()
+        conn.close()
+        return redirect(url_for('productos'))
+    return render_template('confirmar.html', id=id)
