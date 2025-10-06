@@ -1,0 +1,10 @@
+@app.route('/guardar_txt/<dato>')
+def guardar_txt(dato):
+    with open('datos/datos.txt', 'a', encoding='utf-8') as archivo:
+        archivo.write(dato + '\n')
+    return f'Dato "{dato}" guardado en TXT.'
+@app.route('/leer_txt')
+def leer_txt():
+    with open('datos/datos.txt', 'r', encoding='utf-8') as archivo:
+        contenido = archivo.readlines()
+    return render_template('resultado.html', datos=contenido)
