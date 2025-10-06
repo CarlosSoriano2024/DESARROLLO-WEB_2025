@@ -1,0 +1,19 @@
+import json
+@app.route('/guardar_json/<nombre>/<edad>')
+def guardar_json(nombre, edad):
+    nuevo = {"nombre": nombre, "edad": edad}
+    try:
+        with open('datos/datos.json', 'r', encoding='utf-8') as archivo:
+            datos = json.load(archivo)
+    except:
+        datos = []
+    datos.append(nuevo)
+    with open('datos/datos.json', 'w', encoding='utf-8') as archivo:
+        json.dump(datos, archivo, indent=4)
+    return f'Dato de {nombre} guardado en JSON.'
+
+@app.route('/leer_json')
+def leer_json():
+    with open('datos/datos.json', 'r', encoding='utf-8') as archivo:
+        datos = json.load(archivo)
+    return render_template('resultado.html', datos=datos)
